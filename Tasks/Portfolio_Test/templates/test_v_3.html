@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Dark Mode Toggle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .navbar .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+    .navbar-light .nav-link {
+      color: black !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      z-index: 10;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+
+    .hero .btn {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+
+    /* Particles.js Background */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #001a0f, #003322);
+      background-attachment: fixed;
+      z-index: 1;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Light Mode Styles */
+    body.light-mode {
+      background-color: #f8f9fa;
+      color: black;
+    }
+
+    body.light-mode .navbar {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    body.light-mode #particles-js {
+      background: linear-gradient(135deg, #ffefba, #ffffff);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Your Name</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn-outline-light ms-3" id="darkModeToggle">Switch to Light Mode</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <!-- Animated Background -->
+  <div id="particles-js"></div>
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Building stunning websites and creative solutions.</p>
+    <a href="#projects" class="btn btn-warning">View My Work</a>
+    <a href="#contact" class="btn btn-outline-light">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Skills Section (Placeholder) -->
+<section id="skills" class="py-5">
+  <div class="container">
+    <h2 class="text-center">Skills</h2>
+    <p class="text-center">Add your skills here.</p>
+  </div>
+</section>
+
+<!-- Projects Section (Placeholder) -->
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <p class="text-center">Add your projects here.</p>
+  </div>
+</section>
+
+<!-- Contact Section (Placeholder) -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="text-center">Contact</h2>
+    <p class="text-center">Add your contact form here.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4 bg-dark text-light">
+  <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- Particles.js -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  /* Initialize Particles.js */
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 100,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": { "value": "#ffffff" },
+      "shape": {
+        "type": "circle",
+        "stroke": { "width": 0, "color": "#000000" },
+        "polygon": { "nb_sides": 5 },
+        "image": { "src": "", "width": 100, "height": 100 }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#ffffff",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 6,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": true, "mode": "push" },
+        "resize": true
+      },
+      "modes": {
+        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+        "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 },
+        "repulse": { "distance": 200, "duration": 0.4 },
+        "push": { "particles_nb": 4 },
+        "remove": { "particles_nb": 2 }
+      }
+    },
+    "retina_detect": true
+  });
+
+  // Dark Mode Toggle Script
+  const toggleButton = document.getElementById('darkModeToggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLightMode = document.body.classList.contains('light-mode');
+    toggleButton.textContent = isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+  });
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<nav class="navbar bg-transparent navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg bg-gradient">
     <div class="container-fluid ">
         <a class="navbar-brand  mb-0 h1 d-flex align-items-center" href="{{ url_for('home') }}">
             <img alt="Logo" class="me-2" height="30" src="/docs/5.3/assets/brand/bootstrap-logo.svg"/>
@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-item me-3 ms-3">
-                    <a class="nav-link px-3 fw-semibold" href="#" onclick="showContent('Professional')">
+                    <a class="nav-link px-3 fw-semibold" href="#profession" onclick="showContent('Professional')">
                         <i class="fas fa-briefcase"></i> <b>P</b>rofessional Career / <b>P</b>rofession
                     </a>
                 </li>
@@ -89,6 +89,5 @@
     {% include "nav_bar/projects.html" %}
 </div>
 <div class="sliding-div" id="Professional">
-
 </div>
 
