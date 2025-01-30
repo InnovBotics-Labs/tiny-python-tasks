@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hero Section with TV Glitch Effect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Glitch Effect */
+        .hero-img {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: url('{{url_for('static',filename="/assets/Blue-removebg-preview.png")}}') no-repeat center center/cover;
+            filter: grayscale(100%);
+            animation: color-transition 3s infinite alternate, glitch-noise 1s infinite steps(2);
+            overflow: hidden;
+        }
+
+        .hero-img::before,
+        .hero-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            opacity: 0.6;
+        }
+
+        .hero-img::before {
+            animation: glitch-rgb 1.2s infinite linear, glitch-scan 0.2s infinite steps(2);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 20%, 0% 25%);
+        }
+
+        .hero-img::after {
+            animation: glitch-rgb 1.2s infinite linear reverse, glitch-scan 0.3s infinite steps(2);
+            clip-path: polygon(0% 70%, 100% 65%, 100% 100%, 0% 100%);
+        }
+
+        /* Keyframes for Glitch Effects */
+        @keyframes glitch-rgb {
+            0%, 100% { filter: drop-shadow(2px 0 red) drop-shadow(-2px 0 blue); }
+            50% { filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue); }
+        }
+
+        @keyframes glitch-scan {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes color-transition {
+            0% { filter: grayscale(100%); }
+            100% { filter: grayscale(0%); }
+        }
+
+        @keyframes glitch-noise {
+            0% { background-position: 0 0; }
+            100% { background-position: -50px -50px; }
+        }
+
+        /* Right Section - Text */
+        .hero-content {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #00ffea;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #00ffea;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons a:hover {
+            background-color: #00bfa5;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<section class="hero">
+    <!-- Left Section: Image -->
+    <div class="hero-img"></div>
+
+    <!-- Right Section: Text and Buttons -->
+    <div class="hero-content">
+        <h1>Hi, I am <span>Your Name</span></h1>
+        <p>Welcome to my portfolio. I am a creative developer with a passion for building interactive and modern
+            websites.</p>
+        <div class="hero-buttons">
+            <a download href="#">Resume</a>
+            <a href="#work">My Work</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

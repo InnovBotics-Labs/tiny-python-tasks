@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Fixed Hero Section</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fixed Background Section */
+        .hero-section {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            background: url('https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            background-attachment: fixed; /* Fixed background effect */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Overlay */
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Next Section */
+        .next-section {
+            height: 100vh; /* Full viewport height */
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1 class="display-3 fw-bold">Hi, I'm <span class="text-primary">Your Name</span></h1>
+        <p class="lead">I create beautiful and responsive websites.</p>
+        <a class="btn btn-primary btn-lg px-4" href="#portfolio">View My Work</a>
+    </div>
+</section>
+
+<!-- Next Section -->
+<section class="next-section">
+    <div class="container">
+        <h2>Welcome to My Portfolio</h2>
+        <p class="lead">
+            This is where you can explore more about my skills, projects, and experience.
+        </p>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

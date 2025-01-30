@@ -1,7 +1,6 @@
 # tiny-python-tasks
 Contains simple python programs
 
-
 ## Lamda
 Syntax: lamda param : action(param)
 Eg: lamda a,b : a + b
@@ -30,8 +29,8 @@ Rules:
 
 Syntax: dict = {key:value for key, value in dict.items() if condition}
 
-Eg 1: Creating graduated student from all  student list 
-graduated_student = { student: score for student,score in all_students.items() if score > 50 }
+Eg 1: Creating graduated student from all student list
+graduated_student = { student: score for student, score in all_students.items() if score > 50 }
 
 
 Rules:
@@ -89,6 +88,7 @@ To run python code to run on cloud services for free
 - [HTML Entities](https://www.w3schools.com/html/html_entities.asp)
 - [Named Color Color Hunt](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color)
 - [RGB Mixer](https://www.csfieldguide.org.nz/en/interactives/rgb-mixer/)
+
 # WEB design Principles 
 ## color Theory
 - [Adobe_color](https://color.adobe.com/create/color-wheel)

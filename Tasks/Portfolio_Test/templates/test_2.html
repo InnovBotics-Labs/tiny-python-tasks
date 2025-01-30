@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hero Section with Glitch Effect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Left Section - Glitch Image with B/W and Color Transition */
+        .hero-img-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .hero-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url('{{url_for('static',filename="/assets/ynbg.png")}}') no-repeat center center/cover;
+            filter: grayscale(100%);
+            animation: glitch 1.5s infinite, color-transition 4s infinite alternate;
+            z-index: 10;
+        }
+
+        .hero-img::before,
+        .hero-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            opacity: 0.8;
+            filter: grayscale(100%);
+        }
+
+        .hero-img::before {
+            animation: glitch-top 1.5s infinite;
+            clip-path: inset(0 0 50% 0);
+        }
+
+        .hero-img::after {
+            animation: glitch-bottom 1.5s infinite;
+            clip-path: inset(50% 0 0 0);
+        }
+
+        /* Avatar Elements Animation */
+        .avatar-effect {
+            position: absolute;
+            border-radius: 50%;
+            width: 320px;
+            height: 320px;
+            top: -10px;
+            left: -10px;
+            z-index: 5;
+        }
+
+        .fire {
+            border: 3px solid rgba(255, 69, 0, 0.7);
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+            animation: rotate 6s linear infinite;
+        }
+
+        .water {
+            border: 3px solid rgba(0, 191, 255, 0.7);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+            animation: rotate 8s linear infinite reverse;
+        }
+
+        .earth {
+            border: 3px solid rgba(34, 139, 34, 0.7);
+            box-shadow: 0 0 15px rgba(34, 139, 34, 0.7);
+            animation: rotate 10s linear infinite;
+        }
+
+        .air {
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: rotate 12s linear infinite reverse;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+        }
+
+        @keyframes glitch-top {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-5px, -5px); }
+            40% { transform: translate(5px, 5px); }
+            60% { transform: translate(-5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+        }
+
+        @keyframes glitch-bottom {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, -5px); }
+            80% { transform: translate(-5px, 5px); }
+        }
+
+        @keyframes color-transition {
+            0% { filter: grayscale(100%); }
+            100% { filter: grayscale(0%); }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Right Section - Text */
+        .hero-content {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #00ffea;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #00ffea;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hero-buttons a:hover {
+            background-color: #00bfa5;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-img-container {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<section class="hero">
+    <!-- Left Section: Image with Avatar Effects -->
+    <div class="hero-img-container">
+        <div class="avatar-effect fire"></div>
+        <div class="avatar-effect water"></div>
+        <div class="avatar-effect earth"></div>
+        <div class="avatar-effect air"></div>
+        <div class="hero-img"></div>
+    </div>
+
+    <!-- Right Section: Text and Buttons -->
+    <div class="hero-content">
+        <h1>Hi, I am <span>Your Name</span></h1>
+        <p>Welcome to my portfolio. I am a creative developer with a passion for building interactive and modern
+            websites.</p>
+        <div class="hero-buttons">
+            <a download href="#">Resume</a>
+            <a href="#work">My Work</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+>

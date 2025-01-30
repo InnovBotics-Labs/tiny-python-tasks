@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Squarespace-Inspired Design</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+          background-color: #fff;
+          border-bottom: 1px solid #eaeaea;
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+        }
+
+        .navbar .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+        }
+
+        .navbar .logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #333;
+        }
+
+        .navbar .nav-links {
+          list-style: none;
+          display: flex;
+          gap: 1.5rem;
+        }
+
+        .navbar .nav-links a {
+          text-decoration: none;
+          color: #333;
+          font-weight: 500;
+        }
+
+        .navbar .nav-toggle {
+          display: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        .navbar .hamburger {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background: #333;
+          position: relative;
+        }
+
+        .navbar .hamburger::before,
+        .navbar .hamburger::after {
+          content: '';
+          width: 25px;
+          height: 3px;
+          background: #333;
+          position: absolute;
+          left: 0;
+        }
+
+        .navbar .hamburger::before {
+          top: -8px;
+        }
+
+        .navbar .hamburger::after {
+          top: 8px;
+        }
+
+        /* Footer */
+        .footer {
+          background-color: #f8f8f8;
+          border-top: 1px solid #eaeaea;
+          padding: 1.5rem 1rem;
+        }
+
+        .footer .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        .footer p {
+          margin-bottom: 0.5rem;
+          color: #666;
+        }
+
+        .footer-links {
+          list-style: none;
+          display: flex;
+          gap: 1.5rem;
+        }
+
+        .footer-links a {
+          text-decoration: none;
+          color: #666;
+          font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .navbar .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: #fff;
+            position: absolute;
+            top: 60px;
+            right: 1rem;
+            width: 200px;
+            border: 1px solid #eaeaea;
+            padding: 1rem;
+          }
+
+          .navbar .nav-toggle {
+            display: block;
+          }
+
+          .navbar.open .nav-links {
+            display: flex;
+          }
+        }
+    </style>
+
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar ">
+    <div class="container">
+        <a class="logo" href="#">MyBrand</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button aria-label="Toggle navigation" class="nav-toggle">
+            <span class="hamburger"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Main Content Placeholder -->
+<main>
+    <section id="home">
+        <h1>Welcome to My Website</h1>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; 2024 MyBrand. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    document.querySelector('.nav-toggle').addEventListener('click', () => {
+    document.querySelector('.navbar').classList.toggle('open');
+  });
+
+</script>
+</body>
+</html>

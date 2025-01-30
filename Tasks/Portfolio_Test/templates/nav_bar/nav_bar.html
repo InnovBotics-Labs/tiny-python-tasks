@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg bg-gradient">
+    <div class="container-fluid ">
+        <a class="navbar-brand  mb-0 h1 d-flex align-items-center" href="{{ url_for('home') }}">
+            <img alt="Logo" class="me-2" height="30" src="/docs/5.3/assets/brand/bootstrap-logo.svg"/>
+            <span class="fw-bold">Prabhukumar Sivamoorthy</span>
+
+        </a>
+        <!-- Toggle Button for Mobile -->
+        <button aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarScroll" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <!-- Me-auto :left align mx-auto: center align and ms-auto for right align -->
+            <ul class="navbar-nav justify-content-center flex-grow-1 ">
+                <li class="nav-item dropdown me-3 ms-3">
+                    <a class="nav-link px-3 fw-semibold" href="#" onclick="showContent('Products')">
+                        <i class="fas fa-cubes"></i> <b>P</b>roducts</a>
+
+                </li>
+                <li class="nav-item dropdown me-3 ms-3">
+                    <a class="nav-link px-3 fw-semibold" href="#" onclick="showContent('Patents')">
+                        <i class="fas fa-lightbulb"></i> <b>P</b>atents</a>
+                </li>
+                <li class="nav-item dropdown me-3 ms-3">
+                    <a class="nav-link px-3 fw-semibold" href="#" onclick="showContent('Published_Papers')">
+                        <i class="fas fa-file-alt"></i> <b>P</b>ublished <b>P</b>apers</a>
+                </li>
+                <li class="nav-item me-3 ms-3">
+                    <a class="nav-link px-3 fw-semibold" href="#" onclick="showContent('Projects')">
+                        <i class="fas fa-project-diagram"></i> <b>P</b>rojects
+                    </a>
+                </li>
+                <li class="nav-item me-3 ms-3">
+                    <a class="nav-link px-3 fw-semibold" href="#profession" onclick="showContent('Professional')">
+                        <i class="fas fa-briefcase"></i> <b>P</b>rofessional Career / <b>P</b>rofession
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto me-3 ms-3">
+                <li class="nav-item dropdown">
+                    <!-- me-3 end padding ms-3 start padding -->
+                    <a class="nav-link fw-semibold d-flex align-items-center me-3 ms-3" href="#">
+                        <i class="fas fa-envelope"></i><b> P</b>ing-me</a>
+                </li>
+                <li class="nav-item me-3 ms-3">
+                    <!-- Profile Icon -->
+                    <div class="dropdown">
+
+                        <a class="nav-link text-white dropdown-toggle d-flex align-items-center"
+                           data-bs-toggle="dropdown"
+                           href="{{ url_for('home') }}"
+                           id="profileDropdown">
+                            <img alt="Profile" class="rounded-circle me-2" height="40"
+                                 src="https://via.placeholder.com/40"
+                                 width="40">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">
+                                <i class="fas fa-user me-2"></i> <b>P</b>rofile</a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <i class="fas fa-cog me-2"> </i><b>P</b>references</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i><b>P</b>ortal
+                                Sign-off</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="sliding-div " id="Products">
+    {% include "nav_bar/products.html" %}
+</div>
+<div class="sliding-div" id="Patents">
+    {% include "nav_bar/patents.html" %}
+</div>
+<div class="sliding-div" id="Published_Papers">
+    {% include "nav_bar/papers.html" %}
+</div>
+<div class="sliding-div" id="Projects">
+    {% include "nav_bar/projects.html" %}
+</div>
+<div class="sliding-div" id="Professional">
+</div>
+

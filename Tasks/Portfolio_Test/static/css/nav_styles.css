@@ -1,0 +1,173 @@
+        .sliding-div {
+          position: relative;
+          width: 100%;
+          background-color: #f4f4f4;
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.5s ease-in-out;
+        }
+
+        .sliding-div p {
+          padding: 20px;
+          margin: 0;
+        }
+
+        .sliding-div.active {
+          max-height: 1000px; /* Adjust based on content size */
+        }
+
+        .divider-container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          max-width: auto;
+          margin: auto;
+          border-radius: 5px;
+          overflow: hidden;
+        }
+
+    .col-4 {
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .col-4:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    h5 {
+      color: #333;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+
+    .container {
+      max-width: 960px;
+    }
+
+    ul.list-unstyled li {
+      margin: 10px 0;
+    }
+
+    ul.list-unstyled li a {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #e7e7e7;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      color: #333;
+      text-decoration: none;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    ul.list-unstyled li a:hover {
+      background-color: #e9ecef;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    ul.list-unstyled li a .icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: #007bff;
+    }
+
+    /* Gradient Background for Navbar */
+    .bg-gradient {
+        background: linear-gradient(90deg, #007bff, #6610f2);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Navbar Links */
+    .navbar-nav .nav-link {
+        transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+    }
+
+    /* Icons */
+    .nav-link .icon {
+        margin-right: 8px;
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+
+    /* Dropdown */
+    .dropdown-menu {
+        background: #ffffff;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #007bff;
+}
+
+    .list-style {
+        list-style-position: inside; /* Ensures bullets are inside the padding */
+        padding-left: 0; /* Removes default padding */
+        margin: 0; /* Avoid extra margin that could overlap with borders */
+    }
+
+    .list-style li {
+        padding-left: 10px; /* Add space between border and bullets */
+    }
+
+    .col-3, .col-6 {
+        padding-right: 10px; /* Add spacing inside the columns to prevent overlap */
+    }
+    /* Hover effect for links */
+    .link-hover {
+        color: #007bff; /* Default link color */
+        text-decoration: none; /* Remove underline */
+        transition: all 0.3s ease; /* Smooth hover effect */
+    }
+
+    .link-hover:hover {
+        color: #0056b3; /* Darker shade on hover */
+        text-decoration: underline; /* Add underline on hover */
+    }
+
+    /* Hover effect for rows */
+    .row:hover {
+        background-color: #f8f9fa; /* Light gray background on hover */
+        transition: background-color 0.3s ease; /* Smooth transition for hover */
+    }
+
+        /* Hover effects for list items */
+    .hover-item {
+        position: relative;
+        padding: 5px;
+        transition: all 0.3s ease; /* Smooth animation */
+        border-radius: 5px; /* Rounded corners for hover effect */
+    }
+
+    .hover-item:hover {
+        background-color: #f8f9fa; /* Light gray background on hover */
+        transform: translateY(-2px); /* Slightly raise the item */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow on hover */
+    }
+
+    /* Link hover effects */
+    .hover-item a {
+        color: #007bff; /* Default link color */
+        text-decoration: none;
+        transition: color 0.3s ease; /* Smooth color transition */
+    }
+
+    .hover-item a:hover {
+        color: #0056b3; /* Darker blue on hover */
+        text-decoration: underline; /* Underline on hover */
+    }
+
